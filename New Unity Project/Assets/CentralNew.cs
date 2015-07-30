@@ -336,13 +336,17 @@ public class CentralNew : MonoBehaviour {
         camera.transform.position = new Vector3(-47, -50, -10);
     }
 
-    public void GotoArmy()
+    public void GoToArmy()
     {
         camera.transform.position = new Vector3(53, 50, -10);
+        GameObject drag = GameObject.Find("ArmyReserved");
+        drag.transform.position = new Vector3(60, 50, -1);
+        drag.SendMessage("Setx", 60);
     }
 
     public void GoToCardMarket()
     {
+
         camera.transform.position = new Vector3(100, 100, -10);
     }
 
@@ -362,11 +366,43 @@ public class CentralNew : MonoBehaviour {
     public void GoToArmySetting()
     {
         GameObject drag =  GameObject.Find("ArmyReserved");
-        drag.transform.position = new Vector3(120,120,0);
-        drag.SendMessage("Setx", 120);
+        drag.transform.position = new Vector3(118,120,-1);
+        drag.SendMessage("Setx", 118);
 
 
         camera.transform.position = new Vector3(120, 120, -10);
     }
    
+    public void BackToTown()
+    {
+        camera.transform.position = new Vector3(0, 0, -10);
+    }
+
+    public void GoSouth()
+    {
+        camera.transform.position = new Vector3(0, -20, -10);
+    }
+
+    public void GoNorth()
+    {
+        camera.transform.position = new Vector3(0, 20, -10);
+    }
+
+    public void GoWest()
+    {
+        camera.transform.position = new Vector3(-20, 0, -10);
+    }
+
+    public void GoEast()
+    {
+        camera.transform.position = new Vector3(20, 0, -10);
+    }
+
+    public void WestArmy()
+    {
+        GameObject drag = GameObject.Find("West");
+        drag.transform.position = new Vector3(-18, 0, -1);
+        drag.SendMessage("Setx", -18);
+    }
+
 }

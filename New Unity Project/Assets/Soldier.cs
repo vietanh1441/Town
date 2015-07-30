@@ -42,6 +42,14 @@ public class Soldier : MonoBehaviour {
         
     }
 
+    public void Readjust()
+    {
+        if(transform.parent != null)
+        {
+            transform.localPosition = new Vector3(0, 0 - 0.03f * parent_scr.theList.IndexOf(gameObject), -1);
+        }
+    }
+
     void NewSoldier(Vector3 card_central)
     {
         attack = (int)card_central.x;
@@ -52,7 +60,8 @@ public class Soldier : MonoBehaviour {
 
      void OnMouseDown()
     {
-
+        parent_scr.theList.Remove(gameObject);
+        parent_scr.DoParent();
         offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
     }
 
@@ -77,9 +86,10 @@ public class Soldier : MonoBehaviour {
          }
          else
          {
-             transform.SetParent(GameObject.Find("ArmyReserved").transform);
+             transform.SetParent(parent_list.transform);
          }
-         //transform.parent.gameObject.SendMessage("DoParent");
+         Parenting();
+         transform.parent.gameObject.SendMessage("DoParent");
          //Parenting();
         //if hit, set it to parent and put it as parent list
      }

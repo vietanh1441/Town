@@ -56,7 +56,7 @@ public class Tile_new : MonoBehaviour {
         }
         gameObject.GetComponent<SpriteRenderer>().sprite =  bg_sprite[(int)card_central.x];
         bg.GetComponent<SpriteRenderer>().sprite = att_sprite[(int)card_central.y];
-        val.GetComponent<SpriteRenderer>().sprite = val_sprite[(int)card_central.z];
+        val.GetComponent<SpriteRenderer>().sprite = val_sprite[(int)card_central.z-1];
     }
 
     void OnMouseDown()

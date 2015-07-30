@@ -50,6 +50,7 @@
      <Compile Include="Assets\Central.cs" />
      <Compile Include="Assets\CentralNew.cs" />
      <Compile Include="Assets\Drag.cs" />
+     <Compile Include="Assets\Holder.cs" />
      <Compile Include="Assets\Man.cs" />
      <Compile Include="Assets\Soldier.cs" />
      <Compile Include="Assets\Tile.cs" />

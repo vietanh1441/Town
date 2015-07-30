@@ -46,11 +46,18 @@ public class Drag : MonoBehaviour {
         xpos = x;
     }
 
-    void DoParent()
+    public void DoParent()
     {
         for(int i = 0; i < theList.Count; i++)
         {
-            theList[i].SendMessage("Parenting");
+            theList[i].SendMessage("Readjust");
         }
+    }
+
+    public void Readjust(Vector3 dest)
+    {
+        transform.position = dest;
+        xpos = dest.x;
+        ypos = dest.y;
     }
 }
